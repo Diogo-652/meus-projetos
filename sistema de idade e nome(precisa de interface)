@@ -1,0 +1,14 @@
+def calcula_idade(ano_nasc):
+    idade = 2025 - ano_nasc
+    return idade
+
+def main():
+    nome = input("Digite seu nome: ")
+    ano = int(input("Digite o ano que você nasceu: "))
+    idade = calcula_idade(ano)
+    
+    print("Olá,", nome + "!")
+    print("Você nasceu no ano de", ano)
+    print("Você tem", idade, "anos")
+
+main()
