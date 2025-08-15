@@ -1,0 +1,42 @@
+l_nomes = []
+def menu():
+    print("[c] - Create")
+    print("[r] - Read")
+    print("[u] - Update")
+    print("[d] - Delete")
+    print("[e] - Exit")
+    opcao = input("opção: ")
+    return opcao
+def create ():
+        nome = input('Inserir - Nome: ')
+        l_nomes.append(nome)
+def read():
+    print ("valores da lista na horizontal: ")
+    print(l_nomes)
+def update():
+    nome_substituir = str(input("digite o nome que deseja substituir"))
+    novo_nome = str (input("digite o novo nome"))
+    l_nomes[l_nomes.index(nome_substituir)] = novo_nome
+def delete():
+    nome_delete = str (input("digite o nome para deletar"))
+    l_nomes.remove(nome_delete)
+
+if __name__ == '__main__':
+    while True:
+        op = menu()
+        if op == "c":
+            create()
+        elif op == 'r':
+            read()
+        elif op == 'u':
+            update()
+        elif op == 'd':
+            delete()
+        elif op == 'e':
+            print ("saindo do programa")
+            break
+        else:
+            print ("opção ivalida")
+
+
+
