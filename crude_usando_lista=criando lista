@@ -14,11 +14,11 @@ def read():
     print ("valores da lista na horizontal: ")
     print(l_nomes)
 def update():
-    nome_substituir = str(input("digite o nome que deseja substituir"))
-    novo_nome = str (input("digite o novo nome"))
+    nome_substituir = str(input("digite o nome que deseja substituir: "))
+    novo_nome = str (input("digite o novo nome: "))
     l_nomes[l_nomes.index(nome_substituir)] = novo_nome
 def delete():
-    nome_delete = str (input("digite o nome para deletar"))
+    nome_delete = str (input("digite o nome para deletar: "))
     l_nomes.remove(nome_delete)
 
 if __name__ == '__main__':
@@ -37,6 +37,3 @@ if __name__ == '__main__':
             break
         else:
             print ("opção ivalida")
-
-
-
