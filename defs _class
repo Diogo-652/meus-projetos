@@ -1,0 +1,41 @@
+class Produtos:
+    def __init__(self, nome, vlr_compra, vlr_venda, qtd_estoque, qtd_minima):
+        self.nome = nome
+        self.vlr_compra = vlr_compra
+        self.vlr_venda = vlr_venda
+        self.qtd_estoque = qtd_estoque
+        self.qtd_minima = qtd_minima
+    def get_nome(self):
+        return self.nome
+    def get_vlr_compra(self):
+        return self.vlr_compra
+    def get_vlr_venda(self):
+        return self.vlr_venda
+    def get_qtd_estoque(self):
+        return self.qtd_estoque
+    def descricao(self):
+        return f"nome do produto:{self.nome}\n valor da compra:{self.vlr_compra}\nvalor de venda:{self.vlr_venda}quantidade no estoque:{self.qtd_estoque} quantidade Minima{self.qtd_minima}"
+    def set_nome(self,nome):
+        self.nome = nome
+    def set_vlr_compra(self, vlr_compra):
+        self.vlr_compra = vlr_compra
+    def set_vlr_venda(self, vlr_venda):
+        self.vlr_venda = vlr_venda
+    def set_qtd_estoque(self,qtd_estoque):
+        self.qtd_estoque
+    def set_qtd_minima(self, qtd_minima):
+        self.qtd_minima = qtd_minima
+    def lucro(self):
+        return self.vlr_venda - self.vlr_compra
+if __name__ == "__main__":
+    produto_1 = Produtos ("arroz", 29.00, 37.50,40,20)
+    produto_2 = Produtos ("Farinha", 9.90, 87, 25,10)
+    print('Produto 1:\nNome:', produto_1.get_nome())
+    print('Valor de venda:', produto_1.get_vlr_venda())
+    print('Produto 2:\nNome:', produto_2.get_nome())
+    print('Valor de venda:', produto_2.get_vlr_venda())
+    print('Nome alterado:', produto_1.get_nome())
+    print(f'Valor de venda: {produto_1.get_vlr_venda()}')
+    print(produto_1.lucro())
+    print(produto_2.lucro())
+
