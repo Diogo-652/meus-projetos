@@ -1,0 +1,45 @@
+class Funcionario:
+    def __init__(self,nome,salario):
+        self.nome = nome
+        self.salario = salario
+    def get_nome(self):
+        return self.nome
+    def get_salario(self):
+        return self.salario
+    def set_nome(self,nome):
+        self.nome = nome
+    def set_salario(self,salario):
+        self.salario = salario
+    def descricao(self):
+        return f"Nome do funcionario: {self.nome}, ele ganha R${self.salario}"
+class Gerente (Funcionario):
+    def __init__(self,nome,salario,qtd_gerencia):
+        super().__init__(nome,salario)
+        self.qtd_gerencia = qtd_gerencia
+    def get_qtd_gerencia(self):
+        return self.qtd_gerencia
+    def set_qtd_gerencia(self, nova_qtd):
+        self.qtd_gerencia = nova_qtd
+    def descricao(self):
+        return f"Nome do gerente: {self.nome} salario: R${self.salario} quantidade de funcionario que gerencia {self.qtd_gerencia}"
+from atv_1   import Funcionario,Gerente
+if __name__ == '__main__':
+    f1 = Funcionario("Victor Hugo",10)
+    print(f1)
+    f2 = Funcionario("Lucas Gabriel",5000.00)
+    print(f2)
+    print(f1.descricao())
+    print(f2.descricao())
+    f1.set_nome("andre")
+    f1.set_salario(900)
+    print(f1.descricao())
+    g1 = Gerente("joão",20000.00,500)
+    g2 = Gerente("Magnata", 100000000000000000000000000,200)
+    print(g1.descricao())
+    print(g2.descricao())
+    g1.set_nome("João paulo")
+
+    g1.set_salario(100000.00)
+    g1.set_qtd_gerencia(50)
+    print(g1.get_nome())
+    print(g1.descricao())
