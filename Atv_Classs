@@ -1,0 +1,65 @@
+class pessoa:
+    def __init__(self,nome,qtd_dependentes):
+        self.nome = nome
+        self.qtd_dependentes = qtd_dependentes
+
+    def get_nome(self):
+        return self.nome
+    def get_qtd_dependentes(self):
+        return self.qtd_dependentes
+    def set_qtd_dependenes(self,nvqtd):
+        if self.qtd_dependentes >=0:
+            self.qtd_dependentes = nvqtd
+        else:
+            print("não existe dependentes negativos")
+    def descricao(self):
+        return f"nome: {self.nome}\nquantitade de dependentes:{self.qtd_dependentes}"
+class professor(pessoa):
+    def __init__(self,nome,qtd_dependentes,qtd_turmas,valor_aula):
+        super().__init__(nome,qtd_dependentes)
+        self.qtd_turmas = qtd_turmas
+        self.valor_aula = valor_aula
+
+    def get_qtd_turmas(self):
+        return self.qtd_turmas
+    def get_valor_aula(self):
+        return self.valor_aula
+    def set_qtd_trumas(self,nvqtd2):
+        self.qtd_turmas = nvqtd2
+    def set_valor_aula(self,nvvalor):
+        self.valor_aula = nvvalor
+    def rendimento(self):
+        vl_rendimento = self.qtd_turmas * self.valor_aula
+        return f"o salario do professor é: R${vl_rendimento}"
+    def descricao(self):
+        return f"Nome: {self.nome}\nquantidade de dependentes: {self.qtd_dependentes}\nquantidade de turmas: {self.qtd_turmas}\nValor aula: R${self.valor_aula}"
+class funcionario(pessoa):
+    def __init__(self,nome,qtd_dependentes,salario):
+        super().__init__(nome,qtd_dependentes)
+        self.salario = salario
+    def get_salario(self):
+        return self.salario
+    def set_salario(self,nvsalario):
+        self.salario = nvsalario
+    def descricao(self):
+        return f"Nome: {self.nome}\nquantidade de dependentes: {self.qtd_dependentes}\nSalario: R${self.salario}"
+
+
+
+
+from atv1 import pessoa,professor,funcionario
+
+if __name__ == '__main__':
+    p1 = professor("Perereca",0,7,20)
+    f1 = funcionario("Diogo",2,150.000)
+    ps1 =pessoa("Andre",3)
+    p2 = professor("Suicida",0,2,10)
+    f2 = funcionario("Matheus",5,90)
+    print(p1.descricao())
+    print(f1.descricao())
+    print(ps1.descricao())
+    print(p2.descricao())
+    print(f2.descricao())
+    f2.set_qtd_dependenes(-1)
+    print(f2.descricao())
+    print(p1.rendimento())
