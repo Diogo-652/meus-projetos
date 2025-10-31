@@ -1,0 +1,61 @@
+from abc import ABC, abstractmethod
+from math import pi
+
+
+class FormaGeometrica(ABC):
+    def __init__(self,cor):
+        self.cor = cor
+    def get_cor(self):
+        return self.cor
+    def set_cor(self,cor):
+        self.cor = cor
+    @abstractmethod
+    def area(self):
+        ...
+    def perimetro(self):
+        pass
+
+class quadrado(FormaGeometrica):
+    def __init__(self,cor,lado = 2):
+        super().__init__(cor)
+        self.lado = lado
+    def get_lado(self):
+        return self.lado
+    def set_lado(self,valor):
+        self.lado = valor
+    def area(self):
+        vl_area = self.lado**2
+        return vl_area
+    def perimetro(self):
+        vl_perimetro = 4*self.lado
+        return vl_perimetro
+    def exibir(self):
+        return f"tamanho do lado:{self.lado}\narea do quadrado{self.area()}\nPerimetro: {self.perimetro()}"
+class circulo(FormaGeometrica):
+    def __init__(self,cor,raio):
+        super().__init__(cor)
+        self.raio = raio
+    def get_raio(self):
+        return self.raio
+    def set_raio(self,valor):
+        self.raio = valor
+    def area(self):
+        vl_area = pi * self.raio **2
+        return vl_area
+    def perimetro(self):
+        vl_perimetro = 2* pi *self.raio
+        return vl_perimetro
+    def exibir(self):
+        return f"tamanho do raio:{self.raio}\narea do circulo{self.area()}\nPerimetro: {self.perimetro()}"
+
+
+from atv import FormaGeometrica,circulo,quadrado
+if __name__ == '__main__':
+    c1 = circulo("preto",6)
+    c2 = circulo("amarelo",7)
+    q1 = quadrado("azul",8)
+    q2 = quadrado("vermelho",3)
+    print(c1.exibir())
+    print(c2.exibir())
+    print(q1.exibir())
+    print(q2.exibir())
